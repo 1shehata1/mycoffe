@@ -1,0 +1,130 @@
+@import url('../Downloads/wallpaperflare.com_wallpaper(4).jpg');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   min-height: 100vh;
+   /*  */
+   /* backgrounde: url('pexels-apgpotr-683039.jpg'); */
+   /* background-repeat: no-repeat;
+   background-size: cover ;
+   background-attachment: fixed; */
+}
+/* حطيت كل الجوا في النص وحطيت الصوره وظبطت الخلفيه   */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.wrapper {
+    width:400px ;
+    /* background:  transparent; */
+    border: 1.5px solid  rgb(159, 120, 58);
+    /* backdrop-filter: blur(20px); */
+    background-color:  black;
+
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+/*  المريع البرا خالص ده بيححد زوياه */
+.wrapper h1{
+color:   rgb(159, 120, 58);
+    font-size: 36px;
+    text-align: center;
+
+}
+.fa-mug-hot {
+    font-size: 36px;
+    color:  rgb(159, 120, 58);
+}
+  /* حطيت كلمه في النص MY Cofe Shop */
+.wrapper .input-c{
+    position: relative;
+    width: 100%;
+    height: 50PX;
+    /* background:rgb(169, 20, 20); */
+    margin: 30px 0 ;
+}/*شكل الدخل من برا وان هو يظيطه  */
+.input-c input{
+
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    padding: 20px 45px 20px 20px;
+
+
+    
+}
+/* يظبط شكل الدخل من جوا  */
+.input-c input::placeholder{
+    color: rgb(0, 0, 0);
+}
+/* الكلمه الجوا البتقول للميتخدم يدخل بتلونها ابيض بس */
+.input-c i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: black;
+}
+/* يظبط اموجي داخل المكان الدخل */
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px; 
+    
+/* --------------------------------------------- */
+}
+.remember-forgot label select{
+    accent-color: hsl(0, 0%, 100%);
+    margin-right: 3px;
+    
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: rgb(159, 120, 58);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 1px black;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+
+}
+
+/* .wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.register-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration: underline;
+
+} */
