@@ -53,7 +53,7 @@ html
   left: 0;
   width: 100%;
   /* padding: 10px 100px; */
-  padding: 10px 100px; /* مسافة داخلية أقل علشان يكون متناسب */
+/*   padding: 10px 100px; /* مسافة داخلية أقل علشان يكون متناسب */ */
 
   background: transparent;
 
@@ -67,6 +67,16 @@ html
 
 
 }
+.header .menu-toggle{
+    padding: 10px 10px; 
+
+}
+.header .navber{
+    padding: 15px 100px; 
+
+}
+
+
 
 
  /* min: أقل حجم للخط مهما صغرت الشاشة (هنا 24px).
@@ -77,8 +87,10 @@ max: أكبر حجم للخط مهما كبرت الشاشة (هنا33px). */
 .header h1 {
   color: rgb(218, 161, 70);
   text-align: left;
-  font-size: clamp(24px, 5vw, 33px);
-  margin: 0; /* نشيل أي margin افتراضي */
+  font-size: clamp(20px, 4vw, 30px);
+  margin-left: 20px; /* نشيل أي margin افتراضي */
+  margin-top: 5px;
+  margin-bottom: 5px;
   flex: 1; /* يخلي الهيدر ياخد أكبر مساحة ممكنة */
 }
 
