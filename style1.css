@@ -154,6 +154,9 @@ max: أكبر حجم للخط مهما كبرت الشاشة (هنا33px). */
   gap: 25px; /* مسافة بين الروابط */
   align-items: center;
 }
+.navber .first-child{
+  margin-top: 50px;
+}
 .navber a {
   position: relative;
   font-size: 16px;
@@ -169,6 +172,7 @@ max: أكبر حجم للخط مهما كبرت الشاشة (هنا33px). */
 
   transition: color 0.3s ease */
 }
+
 .navber a::before {
   content: "";
   position: absolute;
