@@ -87,7 +87,7 @@ max: أكبر حجم للخط مهما كبرت الشاشة (هنا33px). */
 .header h1 {
   color: rgb(218, 161, 70);
   text-align: left;
-  font-size: clamp(30px, 4vw, 30px);
+  font-size: clamp(40px, 4vw, 30px);
   margin-left: 20px; /* نشيل أي margin افتراضي */
   margin-top: 5px;
   margin-bottom: 5px;
