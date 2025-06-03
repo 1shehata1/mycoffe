@@ -1,88 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my cofe shop</title>
+    <title>MY Coffee Shop</title>
     <link rel="shortcut icon" href="c:\Users\ANDALOS\Desktop\4419157.jpg" type="image/x-icon">
-    
-
-    <link rel="stylesheet" href="style3create.css" >
+    <link rel="stylesheet" href="style3create.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* إضافة أنيميشن للرسالة */
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            z-index: 1000;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        .success-message i {
+            color: rgb(159, 120, 58);
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .success-btn {
+            background:rgb(159, 120, 58);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <video autoplay loop muted playsinline id="background-video">
-    <source src="./aTC_RNYtEb0.mp4" type="video/mp4">
-  
-</video>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="./aTC_RNYtEb0.mp4" type="video/mp4">
+    </video>
 
+    <div class="wrapper">
+        <form id="bookingForm" style="color: rgb(240, 240, 240);">
+            <h1>MY Coffee Shop <i class="fa-solid fa-mug-hot"></i></h1>
 
-  <div class="wrapper">
+            <div class="input-c">
+                <input type="text" id="name" placeholder="Enter Your Name" name="name" required>  
+                <i class='bx bxs-user-circle'></i>
+            </div>
 
-    <form action="./mycoffe php.php" style="color: rgb(240, 240, 240);" method="post" >
-       
-      <h1>MY Cofe Shop   <i class="fa-solid fa-mug-hot"></i> </h1>
+            <div class="input-c">
+                <input type="email" id="email" placeholder="Enter Your Email" name="email" required>
+                <i class='bx bx-edit'></i>
+            </div>
+            
+            <div class="input-c">
+                <input type="text" id="phone" placeholder="Enter Your Phone" name="phone" required>
+                <i class='bx bx-phone'></i>
+            </div>
 
-               <div class="input-c">
+            <button type="submit" class="btn">Create Reservation</button>
+        </form>
+    </div>
 
-                <!-- <label for="fname" >enter your name</label> -->
-                <input type="text" placeholder="enter your name" required>  
-                <i class='bx bxs-user-circle' ></i>
-              </div>
+    <!-- رسالة التأكيد -->
+    <div id="successMessage" class="success-message">
+        <i class="fas fa-check-circle"></i>
+        <h2>Reservation Confirmed</h2>
+        <p id="confirmationText">Thank you for your reservation</p>
+        <button class="success-btn" onclick="hideSuccess()">OK</button>
+    </div>
 
-              <div class="input-c">
+    <script>
+        // عند إرسال النموذج
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع إرسال النموذج بالطريقة التقليدية
+            
+            // جمع البيانات من النموذج
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            // هنا يمكنك إضافة كود لحفظ البيانات إذا كنت تريد
+            
+            // عرض تفاصيل الحجز في الرسالة
+            document.getElementById('confirmationText').innerHTML = `<br>
+                Thank you, <strong>${name}</strong><br>
 
-                <!-- <label for="text" >number</label> -->
-                <input type="text" placeholder="enter your number" required>
-              
-                <i class='bx bx-edit' ></i>
-                
-               </div>
+            `;
+            
+            // إظهار رسالة التأكيد
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // مسح النموذج
+            this.reset();
+        });
 
-
-               <div class="input-c">
-
-                <!-- <label for="text" >number</label> -->
-                <input type="datetime-local" required>
-    
-                
-               </div>
-
-
-                <!-- الموقع الهيروح في فيه بعد ما يدوس علي submit -->
-                 
-         
-          <div class="remember-forgot">
-
-                <label for="booked"> <li>type the reservation </li> </label>
-                <select name="booked" id="booked"   required> 
-                   <option value="single">    </option>
-                <option value="birthday">birthday</option>
-                <option value="Valentine's Day">Valentine's Day</option>
-                <option value="Propose marriage">Applying for marriage</option>
-                <option value="other">other</option>
-              </select>
-         </div> 
-         
-                <div class="remember-forgot"> 
-
-                <label for="booked"> <li>choose type book</li> </label>
-                <select name="booked" id="booked"> 
-                  <option value="single">     </option>
-                  <option value="single">single</option>
-                  <option value="bouble">Double</option>
-              </select>
-              </div>
-
-                <button type="submit" class="btn">Create</button>
-                <!-- عشان يدخلوا لموقع تاني من الزراي\ -->
-
-        
-             </form> 
-  </div>
-    
+        // وظيفة لإخفاء رسالة التأكيد
+        function hideSuccess() {
+            document.getElementById('successMessage').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
